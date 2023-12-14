@@ -17,6 +17,9 @@
 
     <div class="ml-4 mr-9">
         <p class="font-semibold">{{funcTitle}}</p>
-        <p><span>{{minValue | currency}}</span> - <span>{{maxValue | currency}}</span></p>
+        <div *ngIf="areNumbers(); then currencyBlock"></div>
+        <ng-template #currencyBlock>
+            <span>{{minValue | currency}}</span> - <span>{{maxValue | currency}}</span>
+        </ng-template>
     </div>
 </div>

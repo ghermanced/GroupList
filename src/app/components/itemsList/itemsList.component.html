@@ -7,7 +7,7 @@
               data-dropdown-toggle="dropdownDotsHorizontal"
               (click)="toggleDropdown()"
               class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" 
-              type="button"> 
+              type="button">
               <svg 
                   class="w-5 h-5" 
                   aria-hidden="true" 
@@ -39,7 +39,7 @@
                     class="w-5 h-5 ml-5 mt-2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
                   </svg>                  
-                  <a href="" class="block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white">Modifica</a>
+                  <a (click)="modificaGroup()" class="block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white">Modifica</a>
                 </li>
                 <li class="flex hover:bg-gray-100">
                   <svg
@@ -58,13 +58,13 @@
         </div>
         <p class="font-normal text-gray-700 dark:text-gray-400">{{warningMessage}}</p>
         <div class="flex">
-            <app-shortservice
+            <app-groupFunctions
                 *ngFor="let func of functionsList"
                 [funcTitle]="func.title"
                 [minValue]="func.minValue"
                 [maxValue]="func.maxValue"
             >
-            </app-shortservice>
+            </app-groupFunctions>
         </div>
     </a>
 </div>

@@ -3,17 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ItemslistComponent } from './itemslist/itemslist.component';
-import { ShortserviceComponent } from './shortservice/shortservice.component';
-import { ItemslistService } from './itemslist.service';
-import { GrouplistComponent } from './grouplist/grouplist.component';
+import { ItemsListComponent } from './components/itemsList/itemsList.component';
+import { groupFunctionsComponent } from './components/groupFunctions/groupFunctions.component';
+import { ItemslistService } from './services/itemslist.service';
+import { HeaderComponent } from './components/header/header.component';
+import { ModificaComponent } from './components/modifica/modifica.component';
+import { DettagliComponent } from './components/dettagli/dettagli.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemslistComponent,
-    ShortserviceComponent,
-    GrouplistComponent
+    ItemsListComponent,
+    groupFunctionsComponent,
+    HeaderComponent,
+    ModificaComponent,
+    DettagliComponent
   ],
   imports: [
     BrowserModule,

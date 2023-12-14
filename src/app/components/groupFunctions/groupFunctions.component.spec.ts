@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShortserviceComponent } from './shortservice.component';
+import { groupFunctionsComponent } from './groupFunctions.component';
 
 describe('ShortserviceComponent', () => {
-  let component: ShortserviceComponent;
-  let fixture: ComponentFixture<ShortserviceComponent>;
+  let component: groupFunctionsComponent;
+  let fixture: ComponentFixture<groupFunctionsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ShortserviceComponent]
+      declarations: [groupFunctionsComponent]
     });
-    fixture = TestBed.createComponent(ShortserviceComponent);
+    fixture = TestBed.createComponent(groupFunctionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

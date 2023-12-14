@@ -20,3 +20,8 @@ export interface IUsers {
     userInitials: string
     fullName: string
 }
+
+export interface IFunctionDescr {
+    function_code: string
+    function_name: string,
+}

@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ItemslistComponent } from './itemslist/itemslist.component';
-import { GrouplistComponent } from './grouplist/grouplist.component';
+import { ItemsListComponent } from './components/itemsList/itemsList.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ModificaComponent } from './components/modifica/modifica.component';
 
 const routes: Routes = [
-  {path: '', component: GrouplistComponent},
-  {path: 'about', component: ItemslistComponent}
+  {path: '', component: HeaderComponent},
+  {path: 'about', component: ItemsListComponent},
+  {path: 'modifica', component: ModificaComponent},
 ];
 
 @NgModule({

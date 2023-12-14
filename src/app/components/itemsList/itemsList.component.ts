@@ -1,13 +1,15 @@
-import { Component, Input, inject, Renderer2, ElementRef } from '@angular/core';
-import { ItemslistService } from '../itemslist.service';
-import { IFunctions, IGroup } from '../group-list';
+import { Component, Input, inject, Renderer2, ElementRef} from '@angular/core';
+import { ItemslistService } from '../../services/itemslist.service';
+import { IFunctions, IGroup } from '../../interfaces/group-list';
+import { Router } from '@angular/router';
+import { GroupService } from 'src/app/services/group.service';
 
 @Component({
-  selector: 'app-itemslist',
-  templateUrl: './itemslist.component.html',
-  styleUrls: ['./itemslist.component.scss']
+  selector: 'app-itemsList',
+  templateUrl: './itemsList.component.html',
+  styleUrls: ['./itemsList.component.scss']
 })
-export class ItemslistComponent {
+export class ItemsListComponent {
   groupList: IGroup[];
 
   isDropdownVisible = false;
@@ -15,14 +17,21 @@ export class ItemslistComponent {
   @Input() functionsList!: IFunctions[];
   @Input() serviceName?: string;
   @Input() warningMessage?: string;
+  @Input() groupIndex!: number;
 
   private service = inject(ItemslistService);
 
   private documentClickListener!: () => void;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {
+  constructor(
+    private renderer: Renderer2, 
+    private el: ElementRef, 
+    private router: Router,
+    private groupService: GroupService,
+    ) {
     this.groupList = this.service.groupList;
   }
+
 
   toggleDropdown() {
     this.isDropdownVisible = !this.isDropdownVisible;
@@ -41,4 +50,9 @@ export class ItemslistComponent {
       this.isDropdownVisible = false;
     }
   };
+
+  modificaGroup() {
+    this.router.navigate(['modifica']);
+    this.groupService.setCurrentGroup(this.groupList[this.groupIndex])
+  }
 }
