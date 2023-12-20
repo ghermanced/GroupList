@@ -6,16 +6,19 @@ import { IGroup } from '../interfaces/group-list';
 })
 export class GroupService {
 
-  private currentGroup?: IGroup;
+  private currentGroup?: any;
 
   constructor() { }
 
   setCurrentGroup(group: IGroup) {
     this.currentGroup = group;
-    console.log(group)
   }
 
   getCurrentGroup() {
     return this.currentGroup;
+  }
+
+  deleteCurrentGroup() {
+    this.currentGroup = null;
   }
 }

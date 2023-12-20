@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { ItemslistService } from '../../services/itemslist.service';
 import { IGroup } from '../../interfaces/group-list';
+import { Router } from '@angular/router';
+import { GroupService } from 'src/app/services/group.service';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +11,18 @@ import { IGroup } from '../../interfaces/group-list';
 })
 export class HeaderComponent {
   
-    groupList: IGroup[];
-    private service = inject(ItemslistService)
+  groupList: IGroup[];
+  private service = inject(ItemslistService)
 
-    constructor() {
-      this.groupList = this.service.groupList
-    }
-  
+  constructor(private router: Router, private group: GroupService) {
+    this.groupList = this.service.groupList
+  }
+
+  createGroup() {
+    this.group.deleteCurrentGroup()
+    this.router.navigate(
+      ['modifica'],
+      {queryParams: {state: 'create'}}
+      )
+  }
 }

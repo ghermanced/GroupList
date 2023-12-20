@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { GroupService } from '../../services/group.service';
-import { IGroup } from 'src/app/interfaces/group-list';
 
 @Component({
   selector: 'app-modifica',

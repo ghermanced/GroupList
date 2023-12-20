@@ -17,8 +17,8 @@ export interface IFunctions {
 
 export interface IUsers {
     userId: string,
-    userInitials: string
     fullName: string
+    userInitials?: string
 }
 
 export interface IFunctionDescr {

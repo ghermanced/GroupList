@@ -1,0 +1,54 @@
+<td class="w-auto">
+    <label class="mb-2 mt-2 relative inline-flex items-center cursor-pointer">
+        <input 
+            #checks
+            type="checkbox" 
+            [value]="funcName" 
+            class="sr-only peer"
+            [checked]="wasIncluded"
+            [readOnly]="false"
+        >
+        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">{{funcName}}</span>
+  </label>
+</td>
+<ng-container *ngIf="wasIncluded else empty">
+    <td class="w-auto">
+        <input 
+            type="text"
+            [value]="minValue"
+            id="min_value" 
+            class="soglia-input-lock"
+            [readOnly]="false"
+        >
+    </td>
+    <td class="w-auto">
+        <input 
+            type="text"
+            [value]="maxValue"
+            id="max_value" 
+            class="soglia-input-lock" 
+            [readOnly]="false"
+        >
+    </td>
+</ng-container>
+<ng-template #empty>
+    <td class="px-6 py-4">
+        <input 
+            type="text"
+            [value]=""
+            id="min_value" 
+            [ngClass]="" 
+            [readOnly]="false"
+        >
+    </td>
+    <td class="px-6 py-4">
+        <input 
+            type="text"
+            [value]=""
+            id="max_value" 
+            ngClass="soglia-input-lock"
+            [readOnly]="false"
+        >
+    </td>
+</ng-template>
